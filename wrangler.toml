@@ -1,0 +1,6 @@
+name = "ailqk"
+compatibility_date = "2024-03-11"
+pages_build_output_dir = "dist"
+
+[vars]
+# Add any public environment variables here
