@@ -39,27 +39,9 @@ export default async function AdminSpotsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50/50 pb-20 font-sans">
-      {/* Header */}
-      <div className="bg-white border-b sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/map">
-            <Button variant="ghost" size="sm" className="rounded-xl font-bold text-gray-600 hover:bg-gray-100">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Карта
-            </Button>
-          </Link>
-          <div className="flex items-center gap-2">
-            <Shield className="w-5 h-5 text-blue-600" />
-            <h1 className="text-lg font-black text-gray-900">Admin Panel</h1>
-          </div>
-          <div className="text-xs font-bold text-gray-400 uppercase tracking-widest">
-            {pending.length} чакат
-          </div>
-        </div>
-      </div>
+    <div className="min-h-screen bg-gray-50/50 pb-20 selection:bg-green-100 font-sans pt-32">
+      <div className="max-w-6xl mx-auto px-6 space-y-10">
 
-      <div className="max-w-6xl mx-auto px-6 py-8 space-y-10">
 
         {/* Stats */}
         <div className="grid grid-cols-3 gap-4">

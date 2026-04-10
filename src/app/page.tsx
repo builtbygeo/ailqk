@@ -1,7 +1,9 @@
 import MainMap from '@/components/map/MainMap';
-import { getApprovedSpotsWithAmenities } from '@/db/queries';
+import { getMapSpots } from '@/db/queries';
+import { auth } from '@clerk/nextjs/server';
 
 export default async function Home() {
-  const spotsWithAmenities = await getApprovedSpotsWithAmenities();
+  const { userId } = await auth();
+  const spotsWithAmenities = await getMapSpots(userId);
   return <MainMap initialLocations={spotsWithAmenities} />;
 }

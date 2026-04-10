@@ -4,12 +4,14 @@
   --background: #ffffff;
   --foreground: #0f172a;
   --primary: #059669;
+  --primary-foreground: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
   --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
 
   @keyframes blob {
@@ -18,11 +20,19 @@
     66% { transform: translate(-20px, 20px) scale(0.9); }
     100% { transform: translate(0, 0) scale(1); }
   }
+
+  @keyframes slide-up {
+    0% { transform: translateY(10px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
 }
 
 @layer base {
+  * {
+    @apply border-gray-200/60;
+  }
   body {
-    @apply bg-white text-slate-900;
+    @apply bg-gray-50 text-slate-900 selection:bg-emerald-100 selection:text-emerald-900;
   }
 }
 
@@ -30,38 +40,60 @@
   .animate-blob {
     animation: blob 7s infinite;
   }
-  .animation-delay-2000 {
-    animation-delay: 2s;
+  .animate-pro {
+    animation: slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .animation-delay-4000 {
-    animation-delay: 4s;
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+  .glass-pro {
+    @apply bg-white/80 backdrop-blur-2xl border border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.08)] ring-1 ring-black/5;
   }
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #05966933;
+  background: #05966922;
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #05966966;
+  background: #05966944;
 }
 
 /* Leaflet Overrides */
 .leaflet-container {
   font-family: var(--font-outfit), sans-serif !important;
+  background: #f9fafb !important;
 }
 
 .custom-popup .leaflet-popup-content-wrapper {
-  @apply rounded-3xl shadow-2xl border border-gray-100 overflow-hidden;
+  @apply rounded-[2rem] shadow-2xl border border-white/40 overflow-hidden p-0;
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.custom-popup .leaflet-popup-content {
+  margin: 0 !important;
+  width: auto !important;
 }
 
 .custom-popup .leaflet-popup-tip {
   @apply shadow-2xl;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.leaflet-popup-close-button {
+  display: none !important;
+}
+
+/* Smooth Transitions for all interactive elements */
+button, a, .select-trigger {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }

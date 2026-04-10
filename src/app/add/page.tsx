@@ -91,7 +91,7 @@ function AddSpotForm() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50/50 selection:bg-green-100 py-12 px-4">
+    <div className="min-h-screen bg-gray-50/50 selection:bg-green-100 pt-32 pb-12 px-4">
       <div className="max-w-3xl mx-auto">
         <Link href="/map">
           <Button variant="ghost" className="mb-8 rounded-xl hover:bg-white text-gray-600 font-bold group">

@@ -91,37 +91,9 @@ export default async function ProfilePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50/50 pb-20 selection:bg-green-100 font-sans">
-      {/* Header */}
-      <div className="bg-white border-b sticky top-0 z-50">
-        <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/map">
-            <Button variant="ghost" size="sm" className="rounded-xl font-bold text-gray-600 hover:bg-green-50 hover:text-green-700">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Картата
-            </Button>
-          </Link>
-          <h1 className="text-xl font-black text-green-700 tracking-tighter">🏕️ АЙЛЯК</h1>
-          <div className="flex items-center gap-2">
-            {!isPro && (
-              <Link href="/subscription">
-                <Button variant="outline" className="rounded-xl border-amber-200 text-amber-700 bg-amber-50/50 hover:bg-amber-50 font-bold text-xs h-9">
-                  <Crown className="w-3.5 h-3.5 mr-1.5" />
-                  Ailyak Pro
-                </Button>
-              </Link>
-            )}
-            <SignOutButton>
-              <Button variant="ghost" size="sm" className="rounded-xl text-red-500 hover:bg-red-50 font-bold text-xs h-9">
-                <LogOut className="w-3.5 h-3.5 mr-1.5" />
-                Изход
-              </Button>
-            </SignOutButton>
-          </div>
-        </div>
-      </div>
+    <div className="min-h-screen bg-gray-50/50 pb-20 selection:bg-green-100 font-sans pt-32">
+      <main className="max-w-4xl mx-auto px-6 space-y-10">
 
-      <main className="max-w-4xl mx-auto px-6 py-12 space-y-10">
         {/* Profile Card */}
         <div className="relative group">
           <div className="absolute -inset-1 bg-gradient-to-r from-green-600 to-emerald-500 rounded-[3rem] blur opacity-10 group-hover:opacity-20 transition-opacity" />
