@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && npx @cloudflare/next-on-pages && mkdir -p dist && cp -r .vercel/output/. dist/",
-    "build:pages": "next build && npx @cloudflare/next-on-pages",
+    "build": "next build",
+    "pages:build": "next build && npx @cloudflare/next-on-pages && mkdir -p dist && cp -r .vercel/output/. dist/",
     "start": "next start",
     "lint": "eslint"
   },
