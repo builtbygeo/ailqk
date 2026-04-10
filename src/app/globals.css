@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --primary: #059669;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+
+  @keyframes blob {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0, 0) scale(1); }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-white text-slate-900;
+  }
+}
+
+@layer utilities {
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #05966933;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #05966966;
+}
+
+/* Leaflet Overrides */
+.leaflet-container {
+  font-family: var(--font-outfit), sans-serif !important;
+}
+
+.custom-popup .leaflet-popup-content-wrapper {
+  @apply rounded-3xl shadow-2xl border border-gray-100 overflow-hidden;
+}
+
+.custom-popup .leaflet-popup-tip {
+  @apply shadow-2xl;
+}
