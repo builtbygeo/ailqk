@@ -10,6 +10,9 @@ import { MapPin, CheckCircle2, XCircle, Clock, ArrowLeft, Shield, Tent, Building
 import Link from 'next/link';
 import { approveSpot, rejectSpot } from '@/app/actions';
 
+export const runtime = "edge";
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: 'Admin — Управление на места | Ailyak',
 };

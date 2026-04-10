@@ -9,6 +9,9 @@ import Link from 'next/link';
 import ReviewsList from "@/components/location/ReviewsList";
 import ReviewFormWrapper from "@/components/location/ReviewFormWrapper";
 
+export const runtime = "edge";
+export const dynamic = "force-dynamic";
+
 export default async function SpotDetailsPage({ params }: { params: Promise<{ id: string }> }) {
   const { id: spotId } = await params;
   

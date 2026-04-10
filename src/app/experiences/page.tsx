@@ -6,6 +6,9 @@ import { ArrowLeft, Sparkles, Mountain, Waves, Bike, Camera, Compass, Heart } fr
 import Link from 'next/link';
 import { currentUser } from '@clerk/nextjs/server';
 
+export const runtime = "edge";
+export const dynamic = "force-dynamic";
+
 const ACTIVITY_TYPES = [
   { icon: Mountain, color: 'text-green-600', bg: 'bg-green-50', title: 'Езда и конни разходки', desc: 'Открий природата на конски гръб с професионални водачи' },
   { icon: Waves, color: 'text-blue-600', bg: 'bg-blue-50', title: 'Водни спортове', desc: 'Моторница, джет-ски, SUP и други водни активности' },
